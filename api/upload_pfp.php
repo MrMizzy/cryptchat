@@ -1,5 +1,16 @@
 <?php
     session_start();
+    if (!isset($_SESSION['user_id'])){
+        http_response_code(403); // Forbidden
+        header("Location: login.html");
+        exit();
+    } else {
+        $username = $_SESSION['username'];
+        $pfp_path = $_SESSION['pfp_path'];
+    }
+
+    header('Content-Type: application/json');
+
     // check if current pfp is default
     if ($_SESSION['pfp_path'] === './uploads/default.jpg') {
         // If default, do not delete previous file
@@ -9,14 +20,6 @@
         $old_file_path = "." . $_SESSION['pfp_path'];
     }
 
-    if (!isset($_SESSION['user_id'])){
-        http_response_code(403); // Forbidden
-        header("Location: login.html");
-        exit();
-    } else {
-        $username = $_SESSION['username'];
-        $pfp_path = $_SESSION['pfp_path'];
-    }
     // Ensure the request method is POST
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         http_response_code(405); // Method Not Allowed
