@@ -67,7 +67,7 @@
                     </div>
                     <!-- Decryption Output -->
                     <div class="container p-5 border w-50">
-                        <h1>Encrypted Message</h1>
+                        <h1>Decrypted Message</h1>
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="decryptedMessage" placeholder="Your decrypted message will appear here..." style="min-height: 130px" readonly></textarea>
                             <label for="decryptedMessage">Decrypted Message</label>

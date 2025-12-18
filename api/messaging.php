@@ -46,12 +46,15 @@
         foreach ($messages as $msg) {
             $is_sender = $msg['sender_id'] == $userId1;
             $msg_class = $is_sender ? 'sent' : 'received';
-            echo "<div class='d-flex justify-content-between'>";
-            echo    "<p class='small mb-1 text-muted'>". date('h:i', strtotime($msg['created_at'])) ."</p>";
-            echo "</div>";
             if ($is_sender) {
+                echo "<div class='d-flex justify-content-end'>";
+                echo    "<p class='small mb-1 text-muted'>". date('d-m-Y  h:i', strtotime($msg['created_at'])) ."</p>";
+                echo "</div>";
                 echo "<div class='d-flex flex-row justify-content-end'>";
             } else {
+                echo "<div class='d-flex justify-content-start'>";
+                echo    "<p class='small mb-1 text-muted'>". date('d-m-Y  h:i', strtotime($msg['created_at'])) ."</p>";
+                echo "</div>";
                 echo "<div class='d-flex flex-row justify-content-start'>";
             }
             echo    "<div>";
