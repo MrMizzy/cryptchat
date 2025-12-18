@@ -24,7 +24,7 @@
     $message = escapeshellarg($message);
     $n = escapeshellarg($n);
     $e = escapeshellarg($e);
-    $execution_string = "python ../encryption_tools/public.py d $message $n $e";
+    $execution_string = "python3 ../encryption_tools/public.py d $message $n $e";
 
     $decrypted_message = shell_exec($execution_string);
     echo json_encode(['decrypted_message' => $decrypted_message]);

@@ -33,7 +33,7 @@
         $message = escapeshellarg($message);
         $n = escapeshellarg($n);
         $e = escapeshellarg($e);
-        $encrypted_message = shell_exec("python ./encryption_tools/public.py e $message $n $e");
+        $encrypted_message = shell_exec("python3 ./encryption_tools/public.py e $message $n $e");
 
         if (areFriends($conn, $_SESSION['user_id'], $receiver_id) && !empty($message)) {
             if (sendMessage($conn, $_SESSION['user_id'], $receiver_id, $encrypted_message)) {

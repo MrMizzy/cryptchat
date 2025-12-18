@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2025 at 02:53 PM
+-- Generation Time: Dec 18, 2025 at 04:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `cryptchat`
 --
+CREATE DATABASE IF NOT EXISTS `cryptchat` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `cryptchat`;
 
 -- --------------------------------------------------------
 

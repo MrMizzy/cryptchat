@@ -109,7 +109,7 @@
             $stmtDelete->close();
 
             // generate keys for friendship
-            $execution_string = "python ../encryption_tools/rsa_keygen.py";
+            $execution_string = "python3 ../encryption_tools/rsa_keygen.py";
             $key = shell_exec($execution_string);
             list($n, $e) = explode(",", trim($key));
 

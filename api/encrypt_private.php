@@ -24,7 +24,7 @@
     $message = escapeshellarg($message);
     $slope = escapeshellarg($slope);
     $intercept = escapeshellarg($intercept);
-    $execution_string = "python ../encryption_tools/private.py e $message $slope $intercept";
+    $execution_string = "python3 ../encryption_tools/private.py e $message $slope $intercept";
 
     $encrypted_message = shell_exec($execution_string);
     echo json_encode(['encrypted_message' => $encrypted_message]);
